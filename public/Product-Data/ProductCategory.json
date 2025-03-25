@@ -1,0 +1,68 @@
+[
+  {
+    "id": 0,
+    "name": "All",
+    "image": "https://cdn-icons-png.flaticon.com/128/9464/9464164.png",
+    "icon": "https://cdn-icons-png.flaticon.com/128/9411/9411889.png"
+  },
+  {
+    "id": 1,
+    "name": "Dried-Fruit",
+    "image": "https://cdn-icons-gif.flaticon.com/18970/18970862.gif",
+    "icon": "https://cdn-icons-png.flaticon.com/128/8080/8080628.png"
+  },
+  {
+    "id": 2,
+    "name": "Cookies",
+    "image": "https://cdn-icons-gif.flaticon.com/17507/17507052.gif",
+    "icon": "https://cdn-icons-png.flaticon.com/128/1047/1047813.png"
+  },
+  {
+    "id": 3,
+    "name": "Fresh-Fruit",
+    "image": "https://cdn-icons-gif.flaticon.com/14955/14955381.gif",
+    "icon": "https://cdn-icons-png.flaticon.com/128/10981/10981617.png"
+  },
+  {
+    "id": 4,
+    "name": "Tuber-Root",
+    "image": "https://cdn-icons-png.flaticon.com/128/4645/4645870.png",
+    "icon": "https://cdn-icons-png.flaticon.com/128/4645/4645531.png"
+  },
+  {
+    "id": 5,
+    "name": "Snacks",
+    "image": "https://cdn-icons-gif.flaticon.com/15240/15240128.gif",
+    "icon": "https://cdn-icons-png.flaticon.com/128/2553/2553651.png"
+  },
+  {
+    "id": 6,
+    "name": "T-Shirt",
+    "image": "https://cdn-icons-gif.flaticon.com/16768/16768616.gif",
+    "icon": "https://cdn-icons-png.flaticon.com/128/2774/2774424.png"
+  },
+  {
+    "id": 7,
+    "name": "Pant",
+    "image": "https://cdn-icons-gif.flaticon.com/13890/13890949.gif",
+    "icon": "https://cdn-icons-png.flaticon.com/128/862/862993.png"
+  },
+  {
+    "id": 8,
+    "name": "Female",
+    "image": "https://cdn-icons-gif.flaticon.com/12613/12613532.gif",
+    "icon": "https://cdn-icons-png.flaticon.com/128/264/264735.png"
+  },
+  {
+    "id": 9,
+    "name": "Shirt",
+    "image": "https://cdn-icons-gif.flaticon.com/11633/11633769.gif",
+    "icon": "https://cdn-icons-png.flaticon.com/128/4643/4643360.png"
+  },
+  {
+    "id": 10,
+    "name": "Male",
+    "image": "https://cdn-icons-gif.flaticon.com/12613/12613467.gif",
+    "icon": "https://cdn-icons-png.flaticon.com/128/3439/3439472.png"
+  }
+]

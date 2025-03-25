@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "image": "https://www.nirvanaorganic.in/cdn/shop/articles/photo_2024-06-13_11.48.19.jpg?v=1718259552",
+    "title": "The Benefits of Organic Farming",
+    "subtitle": "Discover how organic farming promotes sustainability, protects the environment, and produces healthier food for you and your family.",
+    "description": "Organic farming is a method of crop and livestock production that involves much more than choosing not to use pesticides, fertilizers, genetically modified organisms, antibiotics, and growth hormones. Organic production is a holistic system designed to optimize the productivity and fitness of diverse communities within the agro-ecosystem, including soil organisms, plants, livestock, and people. The principal goal of organic production is to develop enterprises that are sustainable and harmonious with the environment.",
+    "author": "John Doe",
+    "date": "2023-10-01",
+    "comments": 5,
+    "likes": 20,
+    "category": "Organic"
+  },
+  {
+    "id": 2,
+    "image": "https://www.health.com/thmb/KiyIE7lJinlFp8ppAnaAKxlcHv8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/HealthiestFruits-feb2318dc0a3454993007f57c724753f.jpg",
+    "title": "Top 10 Healthiest Fruits You Should Eat Daily",
+    "subtitle": "Learn about the top fruits packed with vitamins, minerals, and antioxidants to boost your health and immunity.",
+    "description": "Eating a variety of fruits is a great way to ensure you're getting a range of nutrients. Fruits are packed with vitamins, minerals, and antioxidants that can help protect your body from disease. Some of the healthiest fruits include apples, bananas, oranges, strawberries, and blueberries. Each of these fruits offers unique health benefits, from improving heart health to boosting your immune system. Incorporating a mix of these fruits into your daily diet can help you maintain a healthy lifestyle.",
+    "author": "Jane Smith",
+    "date": "2023-10-02",
+    "comments": 8,
+    "likes": 35,
+    "category": "Fruits"
+  },
+  {
+    "id": 3,
+    "image": "https://images.immediate.co.uk/production/volatile/sites/10/2018/02/58ef818a-bfd5-4aa8-97a6-73a8e67659db-6dd3ce0.jpg",
+    "title": "How to Grow Your Own Vegetables at Home",
+    "subtitle": "Start your own vegetable garden at home with these easy tips and enjoy fresh, organic produce right from your backyard.",
+    "description": "Growing your own vegetables at home can be a rewarding experience. Not only do you get to enjoy fresh, organic produce, but you also have the satisfaction of knowing exactly where your food comes from. To get started, choose a sunny spot in your yard or balcony, prepare the soil, and select the vegetables you want to grow. Some easy vegetables for beginners include tomatoes, lettuce, and carrots. With a little care and attention, you can have a thriving vegetable garden in no time.",
+    "author": "Alice Johnson",
+    "date": "2023-10-03",
+    "comments": 12,
+    "likes": 45,
+    "category": "Vegetable"
+  },
+  {
+    "id": 4,
+    "image": "https://i0.wp.com/images-prod.healthline.com/hlcmsresource/images/topic_centers/Fast_Food_Effects_Pinterest_crop.jpg?w=1155&h=7900",
+    "title": "The Impact of Fast Food on Health",
+    "subtitle": "Understand the negative effects of fast food on your health and how to make better dietary choices for a healthier life.",
+    "description": "Fast food is often high in calories, fat, sugar, and salt, which can lead to a range of health problems if consumed in excess. Regular consumption of fast food has been linked to obesity, heart disease, diabetes, and other chronic conditions. While it's okay to enjoy fast food occasionally, it's important to balance it with healthier food choices. Opt for grilled instead of fried items, choose water or unsweetened beverages, and add a side of vegetables or fruit to your meal.",
+    "author": "Michael Brown",
+    "date": "2023-10-04",
+    "comments": 7,
+    "likes": 28,
+    "category": "Fast-food"
+  },
+  {
+    "id": 5,
+    "image": "https://dq5pwpg1q8ru0.cloudfront.net/2020/10/14/19/19/35/144f0eab-b01c-463b-9c5a-de02bc27dfe9/Organic%20vegs%20purchased.jpg",
+    "title": "Why Organic Food is Worth the Extra Cost",
+    "subtitle": "Explore the reasons why organic food is a better choice for your health and the environment, despite its higher price.",
+    "description": "Organic food is often more expensive than conventionally grown food, but many people believe it's worth the extra cost. Organic farming practices are designed to be more sustainable and environmentally friendly, which can lead to healthier soil, water, and ecosystems. Additionally, organic food is free from synthetic pesticides and fertilizers, which some people prefer to avoid. While the health benefits of organic food are still debated, many consumers choose organic for its perceived safety and environmental benefits.",
+    "author": "Emily Davis",
+    "date": "2023-10-05",
+    "comments": 10,
+    "likes": 50,
+    "category": "Organic"
+  }
+]
