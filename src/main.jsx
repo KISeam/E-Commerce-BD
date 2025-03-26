@@ -23,35 +23,35 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home />, // Done
+        element: <Home />,
       },
       {
         path: "/about",
-        element: <About />, // Done
+        element: <About />,
       },
       {
         path: "/contact",
-        element: <Contact />, // Done
+        element: <Contact />,
       },
       {
         path: "/blog",
-        element: <Blog />, // Done
+        element: <Blog />,
       },
       {
         path: "/blog/:id",
-        element: <SingleBlog />, // Done
+        element: <SingleBlog />,
       },
       {
         path: "/faq",
-        element: <FAQ />, // Done
+        element: <FAQ />,
       },
       {
         path: "/products",
-        element: <Products />, // Done
+        element: <Products />,
       },
       {
         path: "/products/:id",
-        element: <SingleProduct />, // Done
+        element: <SingleProduct />,
       },
       {
         path: "/addtocart",
@@ -59,17 +59,17 @@ const router = createBrowserRouter([
       },
       {
         path: "/wishlist",
-        element: <Wishlist />, // Done
+        element: <Wishlist />,
       },
     ],
   },
   {
     path: "/login",
-    element: <Login />, // Done
+    element: <Login />,
   },
   {
     path: "/signup",
-    element: <Signup />, // Done
+    element: <Signup />,
   },
 ]);
 

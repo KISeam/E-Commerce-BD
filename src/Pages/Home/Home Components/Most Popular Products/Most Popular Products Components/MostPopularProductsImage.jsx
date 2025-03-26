@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const MostPopularProductsImage = () => {
   return (
@@ -16,9 +17,9 @@ const MostPopularProductsImage = () => {
           Our top most products check it now
         </h3>
 
-        <button className="px-4 py-2 mt-4 bg-[#5caf90] text-white rounded-lg text-sm">
+        <Link to="/products" className="px-4 py-2 mt-4 bg-[#5caf90] text-white rounded-lg text-sm">
           Shop Now
-        </button>
+        </Link>
       </div>
     </div>
   );

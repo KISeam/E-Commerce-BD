@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -9,6 +9,8 @@ const Signup = () => {
     password: "",
     confirmPassword: "",
   });
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -24,86 +26,114 @@ const Signup = () => {
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: 20 }}
-      transition={{ duration: 0.5 }}
-      className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500"
-    >
-      <div className="w-full max-w-md p-8 space-y-5 bg-white rounded-lg shadow-lg">
-        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-center text-gray-800">
+    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+      <div className="w-full max-w-md p-8 space-y-6 bg-white rounded-lg shadow-lg">
+        <h2 className="text-2xl sm:text-3xl font-bold text-center text-gray-800">
           Create an Account
         </h2>
-        <p className="text-xs sm:text-sm md:text-base text-center text-gray-500">
-          Let's get started
+        <p className="text-sm text-center text-gray-500">
+          Let's get started with your free account
         </p>
 
-        <form onSubmit={handleSubmit} className="space-y-4 text-black">
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text text-xs sm:text-sm md:text-base text-gray-700">
-                Name
-              </span>
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="space-y-2 text-xs sm:text-sm md:text-base text-gray-700">
+            <label
+              htmlFor="name"
+              className="block text-xs sm:text-sm md:text-base text-gray-700"
+            >
+              Full Name
             </label>
             <input
               type="text"
+              id="name"
               name="name"
               value={formData.name}
               onChange={handleChange}
-              placeholder="Enter your name"
-              className="input input-bordered w-full bg-gray-100 focus:bg-white focus:outline-none focus:border-indigo-500"
+              placeholder="Enter your full name"
+              className="input input-bordered w-full bg-gray-50 focus:bg-white focus:outline-none focus:border-indigo-500"
               required
             />
           </div>
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text text-xs sm:text-sm md:text-base text-gray-700">
-                Email
-              </span>
+
+          <div className="space-y-2 text-xs sm:text-sm md:text-base text-gray-700">
+            <label
+              htmlFor="email"
+              className="block text-xs sm:text-sm md:text-base text-gray-700"
+            >
+              Email Address
             </label>
             <input
               type="email"
+              id="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
-              placeholder="Enter your email"
-              className="input input-bordered w-full bg-gray-100 focus:bg-white focus:outline-none focus:border-indigo-500"
+              placeholder="Enter your email address"
+              className="input input-bordered w-full bg-gray-50 focus:bg-white focus:outline-none focus:border-indigo-500"
               required
             />
           </div>
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text text-xs sm:text-sm md:text-base text-gray-700">
-                Password
-              </span>
+
+          <div className="space-y-2 text-xs sm:text-sm md:text-base text-gray-700">
+            <label
+              htmlFor="password"
+              className="block text-xs sm:text-sm md:text-base text-gray-700"
+            >
+              Password
             </label>
-            <input
-              type="password"
-              name="password"
-              value={formData.password}
-              onChange={handleChange}
-              placeholder="Enter your password"
-              className="input input-bordered w-full bg-gray-100 focus:bg-white focus:outline-none focus:border-indigo-500"
-              required
-            />
+            <div className="relative">
+              <input
+                type={showPassword ? "text" : "password"}
+                id="password"
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
+                placeholder="Enter your password"
+                className="input input-bordered w-full bg-gray-50 focus:bg-white focus:outline-none focus:border-indigo-500"
+                required
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute inset-y-0 right-0 flex items-center justify-center px-3 text-gray-500 hover:text-indigo-500 focus:outline-none"
+              >
+                {showPassword ? <FaEyeSlash size={18} /> : <FaEye size={18} />}
+              </button>
+            </div>
           </div>
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text text-xs sm:text-sm md:text-base text-gray-700">
-                Confirm Password
-              </span>
+
+          <div className="space-y-2 text-xs sm:text-sm md:text-base text-gray-700">
+            <label
+              htmlFor="confirmPassword"
+              className="block text-xs sm:text-sm md:text-base text-gray-700"
+            >
+              Confirm Password
             </label>
-            <input
-              type="password"
-              name="confirmPassword"
-              value={formData.confirmPassword}
-              onChange={handleChange}
-              placeholder="Confirm your password"
-              className="input input-bordered w-full bg-gray-100 focus:bg-white focus:outline-none focus:border-indigo-500"
-              required
-            />
+            <div className="relative">
+              <input
+                type={showConfirmPassword ? "text" : "password"}
+                id="confirmPassword"
+                name="confirmPassword"
+                value={formData.confirmPassword}
+                onChange={handleChange}
+                placeholder="Confirm your password"
+                className="input input-bordered w-full bg-gray-50 focus:bg-white focus:outline-none focus:border-indigo-500"
+                required
+              />
+              <button
+                type="button"
+                onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                className="absolute inset-y-0 right-0 flex items-center justify-center px-3 text-gray-500 hover:text-indigo-500 focus:outline-none"
+              >
+                {showConfirmPassword ? (
+                  <FaEyeSlash size={18} />
+                ) : (
+                  <FaEye size={18} />
+                )}
+              </button>
+            </div>
           </div>
+
           <button
             type="submit"
             className="btn btn-block border-none bg-gradient-to-r from-indigo-500 to-purple-500 text-xs sm:text-sm md:text-base text-white hover:from-indigo-600 hover:to-purple-600"
@@ -115,13 +145,16 @@ const Signup = () => {
         <div className="text-center">
           <p className="text-xs sm:text-sm md:text-base text-gray-500">
             Already have an account?{" "}
-            <Link to="/login" className="text-indigo-500 hover:underline">
+            <Link
+              to="/login"
+              className="text-indigo-500 hover:underline"
+            >
               Sign In
             </Link>
           </p>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

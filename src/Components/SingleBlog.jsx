@@ -8,6 +8,10 @@ const SingleBlog = () => {
   const { id } = useParams();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     fetch("/Blog-Data/Blogs.json")
       .then((res) => res.json())
       .then((data) => {

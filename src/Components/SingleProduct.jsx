@@ -14,6 +14,10 @@ const SingleProduct = () => {
   const { id } = useParams();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     fetch("/Product-Data/Products.json")
       .then((res) => res.json())
       .then((data) => {
@@ -112,13 +116,13 @@ const SingleProduct = () => {
                   </div>
                   <div className="mt-6">
                     <div className="flex flex-wrap items-end gap-4">
-                      <p className="text-4xl font-bold text-gray-900">
-                        ${product.discountPrice}
+                      <p className="text-2xl lg:text-4xl font-bold text-gray-900">
+                        &#2547; {product.discountPrice}
                       </p>
-                      <p className="text-lg text-gray-500 line-through">
-                        ${product.price}
+                      <p className="text-base lg:text-lg text-gray-500 line-through">
+                        &#2547; {product.price}
                       </p>
-                      <span className="text-sm font-semibold bg-gradient-to-r from-green-400 to-green-600 text-white px-3 py-1 rounded-full">
+                      <span className="text-xs md:text-sm font-semibold bg-gradient-to-r from-green-400 to-green-600 text-white px-3 py-1 rounded-full">
                         {product.discountPresent}% Off
                       </span>
                     </div>
@@ -197,7 +201,7 @@ const SingleProduct = () => {
         <div className="mb-14">
           <HeadDetails title={"Related"} colortitle={"Products"} />
           {relatedProducts.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4">
               {relatedProducts.map((relatedProduct) => (
                 <CartDesign
                   key={relatedProduct.id}

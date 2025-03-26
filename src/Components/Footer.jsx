@@ -109,7 +109,7 @@ const Footer = () => {
                     to="tel:+8801512345678"
                     className="hover:text-green-500 transition"
                   >
-                    +880 1512 345 678
+                    +8801580768366
                   </Link>
                 </div>
                 <div className="flex items-center gap-3">

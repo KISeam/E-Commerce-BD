@@ -14,7 +14,7 @@ const Wishlist = () => {
               colortitle={"Wishlist"}
               subtitle={"Your product wish is our first priority."}
             />
-            <p className="text-black text-lg lg:text-xl 2xl:text-2xl text-center pt-10 pb-20">Your wishlist is empty.</p>
+            <p className="text-black text-lg lg:text-xl text-center pt-10 pb-20">Your wishlist is empty.</p>
           </div>
         </div>
       </div>

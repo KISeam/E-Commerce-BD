@@ -32,9 +32,7 @@ const CartDesign = ({
             <h2 className="text-base md:text-lg font-bold text-gray-800 truncate">
               {title}
             </h2>
-            <p className="text-xs md:text-sm text-gray-500 mt-1">
-              {category}
-            </p>
+            <p className="text-xs md:text-sm text-gray-500 mt-1">{category}</p>
             <div className="flex items-center mt-2">
               <span className="text-yellow-400 flex items-center">
                 <FaStar className="mr-1" />
@@ -49,17 +47,19 @@ const CartDesign = ({
             </div>
             <div className="mt-2 flex items-center justify-between">
               <p className="text-sm md:text-base font-semibold text-gray-800">
-                ${discountPrice}{" "}
+                &#2547; {discountPrice}{" "}
                 <span className="text-xs md:text-sm text-gray-500 line-through">
-                  ${price}
+                  &#2547; {price}
                 </span>
               </p>
-              <p className="text-xs md:text-sm text-green-600">{discountPresent}% Off</p>
+              <p className="text-xs md:text-sm text-green-600">
+                {discountPresent}% Off
+              </p>
             </div>
             <div className="flex items-center justify-between mt-2 text-xs md:text-sm text-gray-600 gap-2">
               <div className="flex items-center gap-1">
                 <FaFire className="text-red-500" />
-                <span>{productSell} sold</span>
+                <span>{productSell}sold</span>
               </div>
               <div className="flex items-center gap-1">
                 <div className="w-[1px] h-4 bg-gray-400"></div>
@@ -67,7 +67,7 @@ const CartDesign = ({
               </div>
               <div className="flex items-center gap-1">
                 <FaEye />
-                <span>{viewCart} view</span>
+                <span>{viewCart}view</span>
               </div>
               <div className="flex items-center gap-1">
                 <div className="w-[1px] h-4 bg-gray-400"></div>
@@ -75,7 +75,7 @@ const CartDesign = ({
               </div>
               <div className="flex items-center gap-1">
                 <MdPreview />
-                <span>{review} review</span>
+                <span>{review}review</span>
               </div>
             </div>
             <div className="flex justify-between items-center mt-4">

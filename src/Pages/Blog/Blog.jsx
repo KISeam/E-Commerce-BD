@@ -8,10 +8,19 @@ const Blog = () => {
   const [blogCategories, setBlogCategories] = useState([]);
   const [selectedCategories, setSelectedCategories] = useState([]);
 
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     fetch("/Blog-Data/Blogs.json")
       .then((res) => res.json())
-      .then((data) => setBlogs(data));
+      .then((data) => {
+        setBlogs(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching blogs:", error);
+        setLoading(false);
+      });
   }, []);
 
   useEffect(() => {
@@ -35,21 +44,27 @@ const Blog = () => {
       <div>
         <div className="flex flex-col gap-6 md:gap-10 lg:gap-12">
           <PageHeader page={"Blog"} />
-          <div className="flex flex-col-reverse lg:flex-row gap-6">
-            <div className="w-full lg:w-1/4">
-              <LeftBlog
-                blogCategories={blogCategories}
-                selectedCategories={selectedCategories}
-                handleCheckboxChange={handleCheckboxChange}
-              />
+          {loading ? (
+            <div className="flex justify-center items-center h-screen">
+              <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-blue-500"></div>
             </div>
-            <div className="w-full lg:w-3/4">
-              <BlogDetails
-                blogs={blogs}
-                selectedCategories={selectedCategories}
-              />
+          ) : (
+            <div className="flex flex-col-reverse lg:flex-row gap-6">
+              <div className="w-full lg:w-1/4">
+                <LeftBlog
+                  blogCategories={blogCategories}
+                  selectedCategories={selectedCategories}
+                  handleCheckboxChange={handleCheckboxChange}
+                />
+              </div>
+              <div className="w-full lg:w-3/4">
+                <BlogDetails
+                  blogs={blogs}
+                  selectedCategories={selectedCategories}
+                />
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </>

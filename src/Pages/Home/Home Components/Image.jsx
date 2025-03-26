@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Image = () => {
   return (
@@ -20,9 +21,9 @@ const Image = () => {
               <h3 className="text-gray-500 text-base md:text-lg lg:text-xl mb-2 md:mb-3 lg:mb-4">
                 The Flavor Of <br /> Something Special
               </h3>
-              <button className="bg-[#63B295] text-white px-4 py-2 rounded-md hover:bg-[#518e79] transition duration-300 cursor-pointer">
+              <Link to="/products" className="bg-[#63B295] text-white px-4 py-2 rounded-md hover:bg-[#518e79] transition duration-300 cursor-pointer">
                 Shop Now
-              </button>
+              </Link>
             </div>
           </div>
           <div className="relative w-full">
@@ -40,9 +41,9 @@ const Image = () => {
               <h3 className="text-gray-500 text-base md:text-lg lg:text-xl mb-2 md:mb-3 lg:mb-4">
                 A Healthy Meal For <br /> Every One
               </h3>
-              <button className="bg-[#63B295] text-white px-4 py-2 rounded-md hover:bg-[#518e79] transition duration-300 cursor-pointer">
+              <Link to="/products" className="bg-[#63B295] text-white px-4 py-2 rounded-md hover:bg-[#518e79] transition duration-300 cursor-pointer">
                 Shop Now
-              </button>
+              </Link>
             </div>
           </div>
         </div>

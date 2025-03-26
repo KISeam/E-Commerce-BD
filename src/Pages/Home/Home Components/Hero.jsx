@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FaAnglesRight } from "react-icons/fa6";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const slides = [
@@ -46,7 +47,7 @@ const Hero = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="absolute top-1/3 left-4 md:left-10 lg:left-20 2xl:left-30">
+            <div className="absolute top-1/3 left-4 md:left-10 lg:left-20 2xl:left-30 flex flex-col gap-1">
               <motion.h1
                 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-gray-700 mb-4"
                 initial={{ opacity: 0, y: 30 }}
@@ -63,15 +64,15 @@ const Hero = () => {
               >
                 {slides[currentSlide].price}
               </motion.p>
-              <motion.button
-                className="bg-black text-white px-6 py-3 rounded-md hover:bg-gray-800 cursor-pointer transition duration-300"
+              <Link to="/products"
+                className="bg-black text-white px-6 py-3 rounded-md hover:bg-gray-800 cursor-pointer transition duration-300 w-fit"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1.2 }}
               >
                 Shop Now
                 <FaAnglesRight className="inline-block ml-2" />
-              </motion.button>
+              </Link>
             </div>
           </motion.div>
         </AnimatePresence>
