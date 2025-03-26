@@ -14,7 +14,7 @@ const FAQ = () => {
               colortitle={"Questions"}
               subtitle={"Customer service management."}
             />
-            <div className="flex flex-col lg:flex-row gap-6">
+            <div className="flex flex-col lg:flex-row gap-6 mb-10">
               <div>
                 <div className="join join-vertical bg-gray-100 text-gray-500">
                   <div className="collapse collapse-arrow join-item border-gray-300 border">

@@ -10,7 +10,7 @@ const Contact = () => {
       <div>
         <div className="flex flex-col gap-6 md:gap-10 lg:gap-12">
           <PageHeader page={"Contact"} />
-          <div className="flex flex-col gap-10">
+          <div className="flex flex-col gap-10 mb-10">
             <HeadDetails
               title={"Get in"}
               colortitle={"Touch"}
