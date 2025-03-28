@@ -6,11 +6,9 @@ import CartDesign from "./CartDesign";
 import HeadDetails from "./HeadDetails";
 
 const SingleProduct = () => {
-  const [productCategory, setProductCategory] = useState([]);
   const [quantity, setQuantity] = useState(1);
   const [product, setProduct] = useState(null);
   const [relatedProducts, setRelatedProducts] = useState([]);
-  const [selectedCategories, setSelectedCategories] = useState([]);
   const { id } = useParams();
 
   useEffect(() => {
@@ -62,14 +60,6 @@ const SingleProduct = () => {
     } else if (type === "decrease" && quantity > 1) {
       setQuantity((prev) => prev - 1);
     }
-  };
-
-  const handleCheckboxChange = (categoryName) => {
-    setSelectedCategories((prev) =>
-      prev.includes(categoryName)
-        ? prev.filter((cat) => cat !== categoryName)
-        : [...prev, categoryName]
-    );
   };
 
   return (
