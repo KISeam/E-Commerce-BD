@@ -18,9 +18,9 @@ const ProductCard = ({ key, image, title, category, discountPrice, price }) => {
               </h3>
               <p className="text-sm text-gray-500">{category}</p>
               <div className="flex items-center gap-2 text-gray-600">
-                <p className="text-base font-bold">$ {discountPrice}</p>
+                <p className="text-base font-bold">&#2547; {discountPrice}</p>
                 <span className="text-sm line-through opacity-70">
-                  $ {price}
+                  &#2547; {price}
                 </span>
               </div>
             </div>
