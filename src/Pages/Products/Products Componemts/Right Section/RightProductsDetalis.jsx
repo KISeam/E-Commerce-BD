@@ -14,6 +14,7 @@ const RightProductsDetalis = ({ products }) => {
             category={product.category}
             rating={product.rating}
             discountPrice={product.discountPrice}
+            discountPresent={product.discountPresent}
             price={product.price}
             productSell={product.productSell}
             viewCart={product.viewCart}

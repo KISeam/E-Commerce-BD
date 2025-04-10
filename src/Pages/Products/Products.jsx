@@ -9,6 +9,7 @@ const Products = () => {
   const [productCategories, setProductCategories] = useState([]);
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
+  const [searchQuery, setSearchQuery] = useState("");
   const navigate = useNavigate();
 
   const [loading, setLoading] = useState(true);
@@ -56,12 +57,17 @@ const Products = () => {
     }
   }, [selectedCategories, setSearchParams]);
 
-  const filteredProducts =
-    selectedCategories.length > 0
-      ? products.filter((product) =>
-          selectedCategories.includes(product.category)
-        )
-      : products;
+  // const filteredProducts =
+  //   selectedCategories.length > 0
+  //     ? products.filter((product) =>
+  //         selectedCategories.includes(product.category)
+  //       )
+  //     : products;
+
+  const filteredProducts = products.filter(product => 
+    product.title.toLowerCase().includes(searchQuery.toLowerCase()) &&
+    (selectedCategories.length === 0 || selectedCategories.includes(product.category))
+  );
 
   return (
     <>
@@ -75,10 +81,17 @@ const Products = () => {
           ) : (
             <div className="flex flex-col-reverse lg:flex-row gap-10 mb-10 lg:mb-16">
               <div className="w-full lg:w-1/4">
+                {/* <LeftCategory
+                  productCategories={productCategories}
+                  selectedCategories={selectedCategories}
+                  setSelectedCategories={setSelectedCategories}
+                /> */}
                 <LeftCategory
                   productCategories={productCategories}
                   selectedCategories={selectedCategories}
                   setSelectedCategories={setSelectedCategories}
+                  searchQuery={searchQuery}
+                  setSearchQuery={setSearchQuery}
                 />
               </div>
               <div className="w-full lg:w-3/4">
