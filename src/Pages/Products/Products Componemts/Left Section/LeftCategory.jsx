@@ -17,14 +17,12 @@ const LeftCategory = ({
         setSelectedCategories([...selectedCategories, decodedCategory]);
       }
     } else {
-      // If no category parameter, clear all selections (showing all products)
       setSelectedCategories([]);
     }
   }, [categoryParam]);
 
   const handleCheckboxChange = (categoryName) => {
     if (categoryName === "All") {
-      // Clear all selections when "All" is clicked
       setSelectedCategories([]);
     } else if (selectedCategories.includes(categoryName)) {
       setSelectedCategories(
@@ -51,7 +49,6 @@ const LeftCategory = ({
           Categories
         </h3>
         <div className="flex flex-col gap-2 p-4">
-          {/* "All" category option */}
           <div
             className="flex items-center gap-3 text-sm text-gray-700 hover:text-blue-600 px-4 py-2 rounded-md hover:bg-gray-50 transition-colors duration-200 cursor-pointer"
             onClick={() => handleCheckboxChange("All")}
@@ -65,7 +62,6 @@ const LeftCategory = ({
             <span>All</span>
           </div>
 
-          {/* Other categories */}
           {productCategories
             .filter((category) => category.name !== "All")
             .map((category) => (
