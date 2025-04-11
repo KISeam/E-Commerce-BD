@@ -81,11 +81,6 @@ const Products = () => {
           ) : (
             <div className="flex flex-col-reverse lg:flex-row gap-10 mb-10 lg:mb-16">
               <div className="w-full lg:w-1/4">
-                {/* <LeftCategory
-                  productCategories={productCategories}
-                  selectedCategories={selectedCategories}
-                  setSelectedCategories={setSelectedCategories}
-                /> */}
                 <LeftCategory
                   productCategories={productCategories}
                   selectedCategories={selectedCategories}
