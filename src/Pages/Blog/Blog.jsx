@@ -41,7 +41,7 @@ const Blog = () => {
 
   return (
     <>
-      <div>
+      <div className="pb-10">
         <div className="flex flex-col gap-6 md:gap-10 lg:gap-12">
           <PageHeader page={"Blog"} />
           {loading ? (
