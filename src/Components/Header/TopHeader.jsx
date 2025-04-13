@@ -30,7 +30,7 @@ const TopHeader = () => {
             </div>
           </div>
 
-          <div className="hidden lg:block">
+          <div className="hidden xl:block">
             <p>Worls's Fastesr Online Shopping Destination</p>
           </div>
 

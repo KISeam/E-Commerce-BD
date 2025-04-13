@@ -19,7 +19,7 @@ const MidHeader = () => {
 
         <div className="flex items-center lg:ml-10 xl:ml-20">
           {" "}
-          <div className="relative w-full md:w-[400px] lg:w-[500px]">
+          <div className="relative w-full md:w-[400px]">
             <input
               className="w-full pl-4 pr-10 py-3 text-sm text-gray-700 placeholder-gray-500 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#63B295] focus:border-transparent transition-all duration-200"
               type="text"
