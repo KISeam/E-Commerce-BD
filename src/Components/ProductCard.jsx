@@ -6,7 +6,7 @@ const ProductCard = ({ key, image, title, category, discountPrice, price }) => {
     <>
       <div>
         <div className="productCard p-4 rounded-lg border border-gray-200">
-          <div className="flex items-center gap-4 relative">
+          <div className="flex items-center gap-4 relative overflow-hidden">
             <img
               src={image}
               alt={title}
