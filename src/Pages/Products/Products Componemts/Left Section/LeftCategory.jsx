@@ -6,11 +6,12 @@ const LeftCategory = ({
   productCategories,
   selectedCategories,
   setSelectedCategories,
+  searchQuery,
   setSearchQuery,
 }) => {
   const [searchParams] = useSearchParams();
   const categoryParam = searchParams.get("category");
-  const [localSearchQuery, setLocalSearchQuery] = useState("");
+  const [localSearchQuery, setLocalSearchQuery] = useState(searchQuery || "");
 
   useEffect(() => {
     if (categoryParam) {
@@ -20,6 +21,10 @@ const LeftCategory = ({
       setSelectedCategories([]);
     }
   }, [categoryParam]);
+
+  useEffect(() => {
+    setSearchQuery(localSearchQuery);
+  }, [localSearchQuery]);
 
   const handleCheckboxChange = (categoryName) => {
     if (categoryName === "All") {
@@ -31,35 +36,24 @@ const LeftCategory = ({
     }
   };
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-    setSearchQuery(localSearchQuery);
-  };
-
-  const handleKeyPress = (e) => {
-    if (e.key === "Enter") {
-      handleSearch(e);
-    }
+  const handleSearchChange = (e) => {
+    setLocalSearchQuery(e.target.value);
   };
 
   return (
     <div>
-      <form onSubmit={handleSearch} className="relative mb-8">
+      <div className="relative mb-8">
         <input
           className="w-full pl-4 pr-10 py-3 text-sm text-gray-700 placeholder-gray-500 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#63B295] focus:border-transparent transition-all duration-200"
           type="text"
           placeholder="Search products..."
           value={localSearchQuery}
-          onChange={(e) => setLocalSearchQuery(e.target.value)}
-          onKeyPress={handleKeyPress}
+          onChange={handleSearchChange}
         />
-        <button 
-          type="submit"
-          className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-[#63B295] transition-colors duration-200"
-        >
-          <IoSearchSharp className="text-lg cursor-pointer" />
-        </button>
-      </form>
+        <div className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500">
+          <IoSearchSharp className="text-lg" />
+        </div>
+      </div>
 
       <div className="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden">
         <h3 className="text-lg font-semibold text-gray-800 bg-gray-50 px-6 py-4 border-b border-gray-200">
