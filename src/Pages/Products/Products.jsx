@@ -40,6 +40,7 @@ const Products = () => {
     const categoryParam = searchParams.get("category");
     if (categoryParam) {
       const decodedCategory = decodeURIComponent(categoryParam);
+      window.scrollTo({ top: 0, behavior: "smooth" });
       if (!selectedCategories.includes(decodedCategory)) {
         setSelectedCategories([decodedCategory]);
       }
@@ -53,6 +54,7 @@ const Products = () => {
       setSearchParams({ category: encodeURIComponent(selectedCategories[0]) });
     } else {
       setSearchParams({});
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   }, [selectedCategories, setSearchParams]);
 
