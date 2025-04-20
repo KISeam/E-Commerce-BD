@@ -35,7 +35,7 @@ const Blog = () => {
         selectedCategories.filter((name) => name !== categoryName)
       );
     } else {
-      setSelectedCategories([...selectedCategories, categoryName]);
+      setSelectedCategories(categoryName);
     }
   };
 

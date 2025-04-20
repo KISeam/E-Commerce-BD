@@ -65,10 +65,10 @@ const LeftCategory = ({
             onClick={() => handleCheckboxChange("All")}
           >
             <input
-              type="radio"
+              type="checkbox"
+              class="checkbox checkbox-neutral checkbox-sm border-gray-300"
               checked={selectedCategories.length === 0}
               onChange={() => handleCheckboxChange("All")}
-              className="w-4 h-4 text-[#63B295] border-gray-300 rounded-full focus:ring-[#63B295] cursor-pointer"
             />
             <span>All</span>
           </div>
@@ -82,10 +82,10 @@ const LeftCategory = ({
                 onClick={() => handleCheckboxChange(category.name)}
               >
                 <input
-                  type="radio"
+                  type="checkbox"
+                  class="checkbox checkbox-neutral checkbox-sm border-gray-300"
                   checked={selectedCategories.includes(category.name)}
                   onChange={() => handleCheckboxChange(category.name)}
-                  className="w-4 h-4 text-[#63B295] border-gray-300 rounded-full focus:ring-[#63B295] cursor-pointer"
                 />
                 <span>{category.name}</span>
               </div>
