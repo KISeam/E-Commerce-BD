@@ -18,7 +18,7 @@ const TopHeader = () => {
   return (
     <div>
       <div className="bg-gray-100 hidden lg:block text-gray-500 text-sm">
-        <div className="flex items-center justify-between py-4 w-full md:w-11/12 lg:w-9/12 mx-auto">
+        <div className="flex items-center justify-between py-4 w-11/12 lg:w-9/12 mx-auto">
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2">
               <MdOutlinePhoneInTalk />
@@ -50,7 +50,7 @@ const TopHeader = () => {
       </div>
 
       <div className="bg-gray-100  text-gray-500 text-sm  hidden md:block lg:hidden ">
-        <div className="flex items-center justify-between py-4 w-full md:w-11/12 lg:w-9/12 mx-auto">
+        <div className="flex items-center justify-between py-4 w-11/12 lg:w-9/12 mx-auto">
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2">
               <MdOutlinePhoneInTalk />
