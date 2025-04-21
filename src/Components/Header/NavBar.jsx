@@ -36,7 +36,7 @@ const NavBar = () => {
 
   return (
     <div className="bg-white border-t border-b border-gray-200 hidden lg:block">
-      <div className="flex justify-between items-center w-11/12 md:w-10/11 lg:w-9/12 mx-auto py-2">
+      <div className="flex justify-between items-center w-full md:w-11/12 lg:w-9/12 mx-auto py-2">
         <div className="flex items-center ">
           <div className="relative" ref={dropdownRef}>
             <div

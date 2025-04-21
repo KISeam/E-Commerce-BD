@@ -18,7 +18,7 @@ const TopHeader = () => {
   return (
     <div>
       <div className="bg-gray-100 hidden lg:block text-gray-500 text-sm">
-        <div className="flex items-center justify-between py-4 w-11/12 md:w-10/11 lg:w-9/12 mx-auto">
+        <div className="flex items-center justify-between py-4 w-full md:w-11/12 lg:w-9/12 mx-auto">
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2">
               <MdOutlinePhoneInTalk />
@@ -50,7 +50,7 @@ const TopHeader = () => {
       </div>
 
       <div className="bg-gray-100  text-gray-500 text-sm  hidden md:block lg:hidden ">
-        <div className="flex items-center justify-between py-4 w-11/12 md:w-10/11 lg:w-9/12 mx-auto">
+        <div className="flex items-center justify-between py-4 w-full md:w-11/12 lg:w-9/12 mx-auto">
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2">
               <MdOutlinePhoneInTalk />
@@ -165,7 +165,7 @@ const TopHeader = () => {
                   <span className="text-gray-600">Home</span>
                   <CiCirclePlus className="text-xl text-gray-500" />
                 </Link>
-                
+
                 <Link
                   to="/products"
                   className="flex justify-between items-center p-2 border border-gray-300 hover:border-[#5caf90] rounded-md transition-colors"
@@ -192,7 +192,6 @@ const TopHeader = () => {
                   <span className="text-gray-600">FAQ</span>
                   <CiCirclePlus className="text-xl text-gray-500" />
                 </Link>
-
 
                 <Link
                   to="/about"

@@ -8,7 +8,7 @@ const MidHeader = () => {
   return (
     <div className="bg-white md:border-b md:border-gray-200 lg:border-none">
       {/* Desktop View */}
-      <div className="hidden md:flex items-center justify-between w-11/12 md:w-10/11 lg:w-9/12 mx-auto py-6 gap-10">
+      <div className="hidden md:flex items-center justify-between w-full md:w-11/12 lg:w-9/12 mx-auto py-6 gap-10">
         <Link to="/" className="flex-shrink-0">
           <img
             className="h-10 w-auto min-w-[50px]"

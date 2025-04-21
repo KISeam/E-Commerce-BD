@@ -12,7 +12,7 @@ const Root = () => {
       <TopHeader />
       <MidHeader />
       <NavBar />
-      <div className="w-11/12 md:w-10/11 lg:w-9/12 mx-auto">
+      <div className="w-full md:w-11/12 lg:w-9/12 mx-auto">
         <Outlet />
       </div>
       <Footer />
