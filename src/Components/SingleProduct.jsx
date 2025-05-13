@@ -1,15 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { FaRegHeart, FaShoppingCart, FaStar, FaSearch } from "react-icons/fa";
+import { FaRegHeart, FaShoppingCart, FaStar } from "react-icons/fa";
 import PageHeader from "./PageHeader";
 import CartDesign from "./CartDesign";
 import HeadDetails from "./HeadDetails";
+import { useNavigate } from "react-router-dom";
+import { useCart } from "../contexts/CartContext";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const SingleProduct = () => {
   const [quantity, setQuantity] = useState(1);
   const [product, setProduct] = useState(null);
   const [relatedProducts, setRelatedProducts] = useState([]);
+  const [productCategory, setProductCategory] = useState([]);
   const { id } = useParams();
+  const { addToCart } = useCart();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -26,31 +32,21 @@ const SingleProduct = () => {
 
   useEffect(() => {
     fetch("/Product-Data/ProductCategory.json")
-      .then((res) => {
-        if (!res.ok) throw new Error("Failed to fetch categories");
-        return res.json();
-      })
-      .then((data) => setProductCategory(data))
-      .catch((error) => console.error("Error fetching categories:", error));
+      .then((res) => res.json())
+      .then((data) => setProductCategory(data));
   }, []);
 
   useEffect(() => {
     if (product) {
       fetch("/Product-Data/Products.json")
-        .then((res) => {
-          if (!res.ok) throw new Error("Failed to fetch related products");
-          return res.json();
-        })
+        .then((res) => res.json())
         .then((data) => {
           const filteredRelatedProducts = data.filter(
             (item) =>
               item.category === product.category && item.id !== product.id
           );
           setRelatedProducts(filteredRelatedProducts);
-        })
-        .catch((error) =>
-          console.error("Error fetching related products:", error)
-        );
+        });
     }
   }, [product]);
 
@@ -62,6 +58,24 @@ const SingleProduct = () => {
     }
   };
 
+  const handleAddToCart = () => {
+    if (!product) return;
+
+    addToCart({
+      ...product,
+      quantity: quantity,
+    });
+
+    toast.success(`${product.title} added to cart!`, {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+    });
+  };
+
   return (
     <>
       <div className="flex flex-col gap-6 md:gap-10 lg:gap-12">
@@ -71,7 +85,7 @@ const SingleProduct = () => {
             {product ? (
               <div className="flex flex-col lg:flex-row gap-8 bg-white rounded-2xl border border-gray-300 p-8">
                 <div className="w-full lg:w-1/2">
-                  <div className="relative w-full lg:h-[500px] overflow-hidden rounded-2xl">
+                  <div className="relative w-full lg:h-[500px] overflow-hidden rounded-2xl lg:sticky lg:top-20 lg:self-start">
                     <img
                       src={product.image}
                       alt={product.title}
@@ -174,7 +188,10 @@ const SingleProduct = () => {
                         +
                       </button>
                     </div>
-                    <button className="flex items-center justify-center gap-2 px-6 py-2 bg-gradient-to-r from-black to-gray-800 text-white rounded-lg hover:from-gray-800 hover:to-black transition-all duration-300 shadow-lg cursor-pointer w-full sm:w-fit">
+                    <button
+                      onClick={handleAddToCart}
+                      className="flex items-center justify-center gap-2 px-6 py-2 bg-gradient-to-r from-black to-gray-800 text-white rounded-lg hover:from-gray-800 hover:to-black transition-all duration-300 shadow-lg cursor-pointer w-full sm:w-fit"
+                    >
                       <FaShoppingCart className="h-5 w-5" />
                       <span>Add to Cart</span>
                     </button>

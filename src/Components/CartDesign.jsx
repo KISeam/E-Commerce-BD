@@ -3,6 +3,9 @@ import { FaShoppingCart, FaEye, FaStar, FaFire } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa6";
 import { MdPreview } from "react-icons/md";
 import { Link } from "react-router-dom";
+import { useCart } from "../contexts/CartContext";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const CartDesign = ({
   productId,
@@ -17,6 +20,30 @@ const CartDesign = ({
   viewCart,
   review,
 }) => {
+  const { addToCart } = useCart();
+
+  const handleAddToCart = (e) => {
+    e.preventDefault();
+    addToCart({
+      id: productId,
+      title: title,
+      image: image,
+      category: category,
+      price: price,
+      discountPrice: discountPrice,
+      subtitle: "",
+    });
+
+    toast.success(`${title} added to cart!`, {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+    });
+  };
+
   return (
     <>
       <Link to={`/products/${productId}`}>
@@ -79,7 +106,10 @@ const CartDesign = ({
               </div>
             </div>
             <div className="flex justify-between items-center mt-4">
-              <button className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-black to-gray-800 text-white rounded-lg hover:from-gray-800 hover:to-black shadow-lg cursor-pointer text-sm">
+              <button
+                onClick={handleAddToCart}
+                className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-black to-gray-800 text-white rounded-lg hover:from-gray-800 hover:to-black shadow-lg cursor-pointer text-sm"
+              >
                 <FaShoppingCart className="h-4 w-4" />
                 <span className="mt-[1px]">Add to Cart</span>
               </button>

@@ -3,8 +3,12 @@ import { LuUserRound } from "react-icons/lu";
 import { FaRegHeart } from "react-icons/fa6";
 import { IoBagOutline, IoSearchSharp } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import { useCart } from "../../contexts/CartContext";
 
 const MidHeader = () => {
+  const { cartItems } = useCart();
+  const cartItemCount = cartItems.length;
+
   return (
     <div className="bg-white md:border-b md:border-gray-200 lg:border-none">
       {/* Desktop View */}
@@ -68,7 +72,9 @@ const MidHeader = () => {
               <IoBagOutline className="text-2xl text-gray-500" />
               <p className="text-gray-500 text-xs" tabIndex={0} role="">
                 Cart <br />{" "}
-                <span className="font-extralight text-black">0-ITEMS</span>{" "}
+                <span className="font-extralight text-black">
+                  {cartItemCount}-ITEMS
+                </span>{" "}
               </p>
             </Link>
           </div>
